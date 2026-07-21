@@ -24,7 +24,7 @@ const COMPANIES = [
   },
   {
     id: "beautyque-med-aegeless",
-    name: "Beautyque Med Aegeless",
+    name: "Beautyque Med Aegeless SRL",
     employees: [
       "Ivan Mina Iuliana",
       "Thiess Elena-Delia",
