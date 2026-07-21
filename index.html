@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Condică de prezență</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ledger" id="ledger">
+
+  <!-- Antet -->
+  <header class="ledger-header">
+    <div class="stitching" aria-hidden="true"></div>
+    <div class="header-content">
+      <h1>Condică de prezență</h1>
+      <div class="header-date" id="headerDate">—</div>
+    </div>
+  </header>
+
+  <!-- ECRAN 1: alege firma -->
+  <section class="page active" id="screen-company">
+    <p class="page-kicker">Pasul 1 — alege firma</p>
+    <div class="company-grid" id="companyGrid"></div>
+  </section>
+
+  <!-- ECRAN 2: alege actiunea -->
+  <section class="page" id="screen-action">
+    <p class="page-kicker">Pasul 2 — <span id="selectedCompanyLabel"></span></p>
+    <div class="action-grid">
+      <button class="action-card action-arrival" data-action="checkin">
+        <span class="action-icon">✎</span>
+        <span class="action-title">Sosire</span>
+        <span class="action-sub">semnează condica</span>
+      </button>
+      <button class="action-card action-departure" data-action="checkout">
+        <span class="action-icon">⏻</span>
+        <span class="action-title">Ieșire din tură</span>
+        <span class="action-sub">confirmă plecarea</span>
+      </button>
+    </div>
+    <button class="link-back" data-back="screen-company">‹ înapoi la firme</button>
+  </section>
+
+  <!-- ECRAN 3: alege angajatul -->
+  <section class="page" id="screen-employee">
+    <p class="page-kicker" id="employeeStepLabel">Pasul 3 — alege numele tău</p>
+    <div class="employee-grid" id="employeeGrid"></div>
+    <button class="link-back" data-back="screen-action">‹ înapoi</button>
+  </section>
+
+  <!-- ECRAN 4a: semnatura (sosire) -->
+  <section class="page" id="screen-signature">
+    <p class="page-kicker">Semnează pentru <span id="signatureEmployeeName"></span></p>
+    <div class="sign-pad-wrap">
+      <canvas id="signatureCanvas"></canvas>
+      <div class="sign-line" aria-hidden="true"></div>
+      <div class="sign-placeholder" id="signPlaceholder">semnează aici cu degetul</div>
+    </div>
+    <div class="sign-actions">
+      <button class="btn-secondary" id="clearSignature">Șterge</button>
+      <button class="btn-primary" id="confirmSignature" disabled>Confirmă sosirea</button>
+    </div>
+    <button class="link-back" data-back="screen-employee">‹ înapoi</button>
+  </section>
+
+  <!-- ECRAN 4b: confirmare plecare -->
+  <section class="page" id="screen-confirm-departure">
+    <p class="page-kicker">Confirmă ieșirea din tură</p>
+    <div class="confirm-box">
+      <div class="confirm-name" id="departureEmployeeName"></div>
+      <div class="confirm-time" id="departureTimePreview">—</div>
+      <p class="confirm-hint">Se va înregistra ora curentă ca oră de plecare.</p>
+    </div>
+    <div class="sign-actions">
+      <button class="btn-secondary" data-back="screen-employee">Anulează</button>
+      <button class="btn-primary" id="confirmDeparture">Confirmă plecarea</button>
+    </div>
+  </section>
+
+  <!-- ECRAN 5: succes -->
+  <section class="page" id="screen-success">
+    <div class="stamp-wrap">
+      <div class="stamp" id="stamp">
+        <span class="stamp-check">✓</span>
+        <span class="stamp-label" id="stampLabel">SOSIRE</span>
+        <span class="stamp-time" id="stampTime">--:--</span>
+      </div>
+    </div>
+    <p class="success-message" id="successMessage"></p>
+    <button class="btn-primary" id="newEntry">Înapoi la condică</button>
+  </section>
+
+  <!-- ECRAN eroare -->
+  <section class="page" id="screen-error">
+    <p class="error-message" id="errorMessage">A apărut o eroare.</p>
+    <button class="btn-primary" id="errorBack">Încearcă din nou</button>
+  </section>
+
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
