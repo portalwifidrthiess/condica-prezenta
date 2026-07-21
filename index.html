@@ -6,16 +6,16 @@
 <title>Condică de prezență</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="ledger" id="ledger">
+<div class="card" id="ledger">
 
   <!-- Antet -->
-  <header class="ledger-header">
-    <div class="stitching" aria-hidden="true"></div>
+  <header class="app-header">
+    <img src="logo.webp" alt="Dr. Delia Thiess Clinic" class="logo" onerror="this.style.display='none'">
     <div class="header-content">
       <h1>Condică de prezență</h1>
       <div class="header-date" id="headerDate">—</div>
@@ -33,12 +33,12 @@
     <p class="page-kicker">Pasul 2 — <span id="selectedCompanyLabel"></span></p>
     <div class="action-grid">
       <button class="action-card action-arrival" data-action="checkin">
-        <span class="action-icon">✏️</span>
+        <span class="action-icon">✎</span>
         <span class="action-title">Sosire</span>
         <span class="action-sub">semnează condica</span>
       </button>
       <button class="action-card action-departure" data-action="checkout">
-        <span class="action-icon">⏰</span>
+        <span class="action-icon">⏻</span>
         <span class="action-title">Ieșire din tură</span>
         <span class="action-sub">confirmă plecarea</span>
       </button>
