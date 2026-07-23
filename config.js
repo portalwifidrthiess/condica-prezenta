@@ -20,6 +20,7 @@ const COMPANIES = [
       "Thiess Elena-Delia",
       "Tomus Roxana Bianca",
       "Matei Roxana",
+      "Tuca Corina",
     ],
   },
   {
