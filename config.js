@@ -29,6 +29,7 @@ const COMPANIES = [
     employees: [
       "Ivan Mina Iuliana",
       "Thiess Elena-Delia",
+      "Gurbina Ariana",
       "Timariu Daniel Marian",
     ],
   },
